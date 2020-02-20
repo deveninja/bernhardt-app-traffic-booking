@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "traffic-booking-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/trafficBooking/TrafficBookingWebPart.js",
+          "manifest": "./src/webparts/trafficBooking/TrafficBookingWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "TrafficBookingWebPartStrings": "lib/webparts/trafficBooking/loc/{locale}.js"
+  }
+}

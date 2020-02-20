@@ -1,0 +1,98 @@
+.cards {
+   height: 150px;
+   width: 150px;
+   max-height: 150px;
+   max-width: 150px;
+   box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
+   color: rgba($theme-font-color, 0.5);
+   text-align: center;
+   padding: 10px;
+   border-radius: 5px;
+   transition: scale 1s ease-in-out linear;
+  
+
+    &:hover {
+      box-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+      cursor: pointer;
+      transform: scale(.98);
+      background-color: rgba($theme-font-color, 0.05);
+      color: $theme-font-color-blue;
+      i {
+        color: rgba($theme-font-color-blue, 0.8);
+      }
+  
+    }
+    &.disabled:hover, 
+    &.disabled {
+    
+      box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
+      cursor: initial;
+      transform: unset;
+      // transform: scale(1);
+      background-color: transparent;
+      color: rgba($theme-font-color, 0.2);  
+      i {
+        color: rgba($theme-font-color, 0.2);
+      }    
+    
+    }
+ 
+   i {
+     // border: 1px solid red;
+     // display: block;
+     // color: rgba($theme-font-color, 0.5);
+     font-size: 75px;
+     padding: 10px;
+   }
+ 
+   .cardWrapper {
+     // border: 1px solid red;
+     color: inherit;
+     height: 80%;
+     width: auto;
+   }
+
+ 
+ }
+
+ .appScreen {
+  color: rgb(102, 102, 102);
+  font-weight: bolder;
+  font-size: 1.5rem;
+  display: block;
+  position: absolute;
+  padding: 1rem;
+}
+ 
+ .homeScreen {
+  // background-color: rgb(107, 105, 105);
+  color: $theme-heading-color;
+  height: 100%;
+  display: -ms-flex;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  
+  .headingTitle {
+    margin-bottom: 2.5rem;
+    text-align: center;
+    span {
+      font-size: 1.5rem;
+    }
+  }
+  .row {
+     margin-bottom: 15px;
+     &:last-child {
+        margin-bottom: 0;
+     }
+  }
+
+ //  .col6 {
+ //    margin: .5rem;
+ //  }
+
+}

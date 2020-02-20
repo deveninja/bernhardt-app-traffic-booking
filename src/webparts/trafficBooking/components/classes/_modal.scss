@@ -1,0 +1,32 @@
+.modalTable {
+   padding: 5px;
+  //  border: 1px solid red;
+   .detailListItems {
+     .row {        
+       &:hover {
+         background-color: rgb(122, 192, 192) !important;
+         cursor: pointer;
+       }
+     }
+     &:hover {
+       background-color: rgb(122, 192, 192) !important;
+       cursor: pointer;
+     }
+   }
+   table {
+     width: 100%;
+     border-collapse: collapse;
+     th, td {
+       width: 100%;
+       min-width: 200px;
+       padding: 5px;
+     }
+
+     tr {
+       &:hover {
+         cursor: pointer;
+       }
+     }
+   }
+   
+ }

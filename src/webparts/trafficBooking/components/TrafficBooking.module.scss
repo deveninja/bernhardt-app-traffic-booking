@@ -1,0 +1,277 @@
+@import '~office-ui-fabric-react/dist/sass/References.scss';
+@import './sass/root.scss';
+
+div[class^="spNav_"] { 
+  /*
+    Hides the left pane menu
+  */
+  width: 0px;
+  min-width: 0; 
+}
+
+
+.trafficBooking {
+  width: 100vw;
+  width: 100%;
+  height: calc(100vh - 178px);
+  position: relative;
+  min-width: 1000px;
+  // padding: 5px;
+  // max-width: calc(100% - 18px);
+  // max-width: 1600px;
+  margin: 0 auto;
+  // margin-top: -8rem !important;
+  background-color: rgb(255, 255, 255);
+  // overflow: auto;
+  * {
+
+    a {
+      text-decoration: none;
+      color: $theme-font-color;
+      &:visited {
+        color: none;
+      }
+      &:active,
+      &:hover {
+        color: $theme-font-color-active-hover;
+      }
+    }
+  }
+   /* width */
+   ::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(205, 219, 219);
+    border-radius: 10px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $theme-background-color;
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(87, 126, 126);
+  }
+
+
+  // button:active, button:focus, input, select {
+  //   outline: none;
+  // }
+
+  .container {
+    max-width: 700px;
+    margin: 0px auto;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .grid {
+    @include ms-Grid;
+  }
+
+  .row {
+    @include ms-Grid-row;
+    // @include ms-fontColor-white;
+    // border: 1px solid red;
+    // width: 100%;
+    // padding: 0;
+    // margin: 0;
+  }
+
+  .column {
+    @include ms-Grid-col;
+    // @include ms-lg10;
+    // @include ms-xl8;
+    // @include ms-xlPush2;
+    // @include ms-lgPush1;
+  }
+
+  .col1 {
+    @include ms-Grid-col;
+    @include ms-lg1;
+    @include ms-md1;
+    @include ms-sm1;
+    // padding: 0;
+    // margin: 0;
+  }
+
+  .col2 {
+    @include ms-Grid-col;
+    @include ms-lg2;
+    @include ms-md2;
+    @include ms-sm2;
+    // padding: 0;
+    // margin: 0;
+  }
+
+  .col3 {
+    @include ms-Grid-col;
+    @include ms-lg3;
+    @include ms-md3;
+    @include ms-sm3;
+    // padding: 0;
+    // margin: 0;
+  }
+
+  .col4 {
+    @include ms-Grid-col;
+    @include ms-lg4;
+    @include ms-md4;
+    @include ms-sm4;
+    // padding: 0;
+    // margin: 0;
+  }
+
+  .col5 {
+    @include ms-Grid-col;
+    @include ms-lg5;
+    @include ms-md5;
+    @include ms-sm5;
+    // padding: 0;
+    // margin: 0;
+  }
+
+  .col6 {
+    @include ms-Grid-col;
+    @include ms-lg6;
+    @include ms-md6;
+    @include ms-sm6;
+    // padding: 0;
+    // margin: 0;
+  }
+
+  .col7 {
+    @include ms-Grid-col;
+    @include ms-lg7;
+    @include ms-md7;
+    @include ms-sm7;
+    // padding: 0;
+    // margin: 0;
+  }
+
+  .col8 {
+    @include ms-Grid-col;
+    @include ms-lg8;
+    @include ms-md8;
+    @include ms-sm8;
+    // padding: 0;
+    // margin: 0;
+  }
+
+  .col9 {
+    @include ms-Grid-col;
+    @include ms-lg9;
+    @include ms-md9;
+    @include ms-sm9;
+    // padding: 0;
+    // margin: 0;
+  }
+
+  .col10 {
+    @include ms-Grid-col;
+    @include ms-lg10;
+    @include ms-md10;
+    @include ms-sm10;
+    // padding: 0;
+    // margin: 0;
+  }
+
+  .col11 {
+    @include ms-Grid-col;
+    @include ms-lg11;
+    @include ms-md11;
+    @include ms-sm11;
+    // padding: 0;
+    // margin: 0;
+  }
+
+  .col12 {
+    @include ms-Grid-col;
+    @include ms-lg12;
+    @include ms-md12;
+    @include ms-sm12;
+    // padding: 0;
+    // margin: 0;
+  }
+
+
+  .title {
+    @include ms-font-xl;
+    @include ms-fontColor-white;
+    background: $theme-background-color;
+    height: 20px;
+  }
+
+  .subTitle {
+    @include ms-font-l;
+    @include ms-fontColor-white;
+    background: $theme-background-color;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+  }
+
+  .description {
+    @include ms-font-l;
+    @include ms-fontColor-white;
+  }
+
+  .mainWrapper {
+    position: absolute;
+    height: calc(100% - 40px);
+    width: 100%;
+    top: 40px;
+    left: 0;
+    // padding: 10px;
+  }
+
+  .button {
+    // Our button
+    text-decoration: none;
+    height: 32px;
+
+    // Primary Button
+    min-width: 80px;
+    background-color: $ms-color-themePrimary;
+    border-color: $ms-color-themePrimary;
+    color: $ms-color-white;
+
+    // Basic Button
+    outline: transparent;
+    position: relative;
+    font-family: "Segoe UI WestEuropean","Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: $ms-font-size-m;
+    font-weight: $ms-font-weight-regular;
+    border-width: 0;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 16px;
+
+    .label {
+      font-weight: $ms-font-weight-semibold;
+      font-size: $ms-font-size-m;
+      height: 32px;
+      line-height: 32px;
+      margin: 0 4px;
+      vertical-align: top;
+      display: inline-block;
+    }
+  }
+}
+
+
+@import '../components/classes/Form.module.scss';
+@import '../components/classes/ListsComponent.module.scss';
+@import '../components/classes/cards.scss';
+@import '../components/classes/recursiveInputs.scss';
+@import '../components/classes/modal.scss';
+@import '../components/classes/loader.scss';

@@ -1,0 +1,17 @@
+@import '../sass/root.scss';
+
+.listsComponentWrapper {
+   padding: 10px;
+   color: teal;
+   // position: absolute;
+   // top: 0;
+   // bottom: 0;
+   // left: 0;
+   // right: 0;
+   // border: 1px solid red;
+   height: calc(100% - 20px);
+   // height: 80vh;
+   max-height: calc(100vh - 171px);
+   margin: 0 auto;
+   // overflow: auto;
+}
