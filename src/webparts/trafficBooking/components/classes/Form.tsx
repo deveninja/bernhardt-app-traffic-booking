@@ -354,9 +354,13 @@ class Form extends React.Component<any, any> {
                                  label="Account Address:"
                                  onGetErrorMessage={this._onError}
                                  // disabled={true}
-                                 value={this.state.formState.BernhardtAccAddress}
+                                 type="text"
+                                 value={this._normalizeAbnormalDataText(this.state.formState.BernhardtAccAddress || '').trim()}
                                  // prefix=""
                                  name="BernhardtAccAddress"
+                                 multiline
+                                 rows={4}
+                                 cols={100}
                                  onChange={ this._onInputChange }
                                  // errorMessage={ this._onError}
                                  disabled={!this.props.editState}
@@ -365,8 +369,12 @@ class Form extends React.Component<any, any> {
                                  label="Ship To:"
                                  onGetErrorMessage={this._onError}
                                  // disabled={true}
-                                 value={this.state.formState.BernhardtShipTo}
+                                 type="text"
+                                 value={this._normalizeAbnormalDataText(this.state.formState.BernhardtShipTo || '').trim()}
                                  // prefix=""
+                                 multiline
+                                 rows={4}
+                                 cols={100}
                                  name="BernhardtShipTo"
                                  onChange={ this._onInputChange }
                                  // errorMessage={ this._onError}
@@ -858,17 +866,6 @@ class Form extends React.Component<any, any> {
                                     disabled={!this.props.editState}
                                  />
                                  
-                                 <TextField
-                                    label="Total Cartons:"
-                                    onGetErrorMessage={this._onError}
-                                    // disabled={true}
-                                    value={this.state.formState.BernhardtTotalCartoons}
-                                    // prefix=""
-                                    name="BernhardtTotalCartoons"
-                                    onChange={ this._onInputChange }
-                                    // errorMessage={ this._onError}
-                                    disabled={!this.props.editState}
-                                 />
                                  <Dropdown
                                     dropdownWidth={150}
                                     placeholder="Select an option"
@@ -1135,6 +1132,16 @@ class Form extends React.Component<any, any> {
       });
    }
 
+   private _normalizeAbnormalDataText = (text) => {
+      // {console.log(this.state.formState.BernhardtShipTo.split(/[  ]{2,}./))}
+
+      const standardText = text.split(/[  ]{2,}./);
+      let normalText = '';
+      standardText.forEach(text => {
+         normalText += '\n' + text.trim();
+      });
+      return normalText;
+   }
    private handleText = (i, item?) => e => {
       // console.log(this.state.formData.itemStocks[i].discount);
       //  const currentPlantName = this._handleCurrentPlantCalculation(item.originatingPlant);
