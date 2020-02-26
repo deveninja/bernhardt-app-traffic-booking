@@ -271,7 +271,7 @@ class Form extends React.Component<any, any> {
             {
                // !this.props.loadingState &&
                <Pivot linkFormat={PivotLinkFormat.links}>
-                  <PivotItem headerText="Shipping Details" itemIcon="Ferry">
+                  <PivotItem headerText="Shipping Info Details" itemIcon="Ferry">
                      <div
                         style={{
                            padding: '1rem',
@@ -388,73 +388,7 @@ class Form extends React.Component<any, any> {
 
 
                            <div className={ styles.col4 }>
-                           <Stack tokens={{childrenGap: 20}}>
-                                 <div className={ styles.row }>
-                                    <div className={ styles.col6 }>
-                                       {/* <TextField
-                                          label="Load Date:"
-                                          onGetErrorMessage={this._onError}
-                                          // disabled={true}
-                                          value={this.state.formState.BernhardtRepName}
-                                          // prefix=""
-                                          name="BernhardtRepName"
-                                          onChange={ this._onInputChange }
-                                          // errorMessage={ this._onError}
-                                          disabled={!this.props.editState}
-                                       /> */}
-                                       <DatePicker
-                                          label="Load Date:"
-                                          // firstDayOfWeek={this.state.firstDayOfWeek}
-                                          strings={DayPickerStrings}
-                                          placeholder="Select a date..."
-                                          ariaLabel="Select a date"
-                                          onSelectDate={() => {}}
-                                          disabled={!this.props.editState}
-                                          value={new Date(this.state.formState.BernhardtLoadDate)}
-                                       />
-                                    </div>
-                                    <div className={ styles.col6 }>
-                                       <Dropdown
-                                          placeholder="Select an option"
-                                          label="CW Load Time"
-                                          options={timeDropDownChoices}
-                                          id="CWLoadTime0"
-                                          // required={true}
-                                          selectedKey={this.state.formState.CWLoadTime0.key || ''}
-                                          onChange={this._onChangeDropDown}
-                                          disabled={!this.props.editState}
-                                       />
-                                    </div>
-                                 </div>
-                              </Stack>
-                              <Stack tokens={{childrenGap: 20}}>
-                                 <div className={ styles.row }>
-                                    <div className={ styles.col6 }>
-                                       <Dropdown
-                                          placeholder="Select an option"
-                                          label="PLT 2 Load Time"
-                                          options={timeDropDownChoices}
-                                          id="PLT2LoadTime0"
-                                          // required={true}
-                                          selectedKey={this.state.formState.PLT2LoadTime0.key || ''}
-                                          onChange={this._onChangeDropDown}
-                                          disabled={!this.props.editState}
-                                       />
-                                    </div>
-                                    <div className={ styles.col6 }>
-                                       <Dropdown
-                                          placeholder="Select an option"
-                                          label="PLT 9 Load Time"
-                                          options={timeDropDownChoices}
-                                          id="PLT9LoadTime0"
-                                          // required={true}
-                                          selectedKey={this.state.formState.PLT9LoadTime0.key || ''}
-                                          onChange={this._onChangeDropDown}
-                                          disabled={!this.props.editState}
-                                       />
-                                    </div>
-                                 </div>
-                              </Stack>
+                           
                               <Stack tokens={{childrenGap: 20}}>
                                  <div className={ styles.row }>
                                     <div className={ styles.col6 }>
@@ -514,21 +448,194 @@ class Form extends React.Component<any, any> {
                                        />
                                     </div>
                                  </div>
+                                 
+                              </Stack>
+                              <Stack tokens={{childrenGap: 20}}>
+                                 <div className={ styles.row }>
+                                    <div className={ styles.col12 }>
+                                    <TextField
+                                       label="Port of Discharge:"
+                                       onGetErrorMessage={this._onError}
+                                       // disabled={true}
+                                       value={this.state.formState.BernhardtPortofDischarge}
+                                       // prefix=""
+                                       name="BernhardtPortofDischarge"
+                                       onChange={ this._onInputChange }
+                                       // errorMessage={ this._onError}
+                                       disabled={!this.props.editState}
+                                    />
+                                    </div>
+                                 </div>
                               </Stack>
                               <Stack tokens={{childrenGap: 20}}>
                                  <div className={ styles.row }>
                                     <div className={ styles.col6 }>
                                        <TextField
-                                          label="Port of Discharge:"
+                                          label="Commodity:"
                                           onGetErrorMessage={this._onError}
                                           // disabled={true}
-                                          value={this.state.formState.BernhardtPortofDischarge}
+                                          value={this.state.formState.BernhardtCommodity}
                                           // prefix=""
-                                          name="BernhardtPortofDischarge"
+                                          name="BernhardtCommodity"
                                           onChange={ this._onInputChange }
                                           // errorMessage={ this._onError}
                                           disabled={!this.props.editState}
                                        />
+                                    </div>
+                                    <div className={ styles.col6 }>
+                                       <TextField
+                                          label="Size of Container(s):"
+                                          onGetErrorMessage={this._onError}
+                                          // disabled={true}
+                                          value={this.state.formState.BernhardtCartonContainerSize}
+                                          // prefix=""
+                                          name="BernhardtCartonContainerSize"
+                                          onChange={ this._onInputChange }
+                                          // errorMessage={ this._onError}
+                                          disabled={!this.props.editState}
+                                       />
+                                    </div>
+                                 </div>
+                              </Stack>
+                              <Stack tokens={{childrenGap: 20}}>
+                                 <div className={ styles.row }>
+                                    <div className={ styles.col6 }>
+                                       <TextField
+                                          label="L/C:"
+                                          onGetErrorMessage={this._onError}
+                                          // disabled={true}
+                                          value={this.state.formState.BernhardtLC}
+                                          // prefix=""
+                                          name="BernhardtLC"
+                                          onChange={ this._onInputChange }
+                                          // errorMessage={ this._onError}
+                                          disabled={!this.props.editState}
+                                       />
+                                    </div>
+                                    <div className={ styles.col6 }>
+                                       <TextField
+                                          label="Total Shipment Value:"
+                                          onGetErrorMessage={this._onError}
+                                          // disabled={true}
+                                          value={this.state.formState.BernhardtTotalShipmentValue}
+                                          // prefix=""
+                                          name="BernhardtTotalShipmentValue"
+                                          onChange={ this._onInputChange }
+                                          // errorMessage={ this._onError}
+                                          disabled={!this.props.editState}
+                                       />
+                                    </div>
+                                 </div>
+                              </Stack>
+                              <TextField
+                                 label="Freight Forwarders:"
+                                 onGetErrorMessage={this._onError}
+                                 // disabled={true}
+                                 value={this.state.formState.BernhardtFreightForwarder}
+                                 // prefix=""
+                                 name="BernhardtFreightForwarder"
+                                 onChange={ this._onInputChange }
+                                 // errorMessage={ this._onError}
+                                 disabled={!this.props.editState}
+                              />
+                              
+                           </div>
+
+                           <div className={ styles.col4 }>
+                              
+
+                              
+                              
+                           </div>
+                        </div>
+                     </Stack>                        
+
+                     </div>
+                  </PivotItem>
+                  
+                  <PivotItem headerText="Shipping Time Details" itemIcon="DateTime">
+                     <div
+                        style={{
+                           padding: '1rem',
+                        }}
+                     >
+                        <Stack tokens={{childrenGap: 20}}>
+                           <div className={ styles.row }>
+                              <div className={ styles.col8 }>
+                                 <Stack tokens={{childrenGap: 20}}>
+                                    <div className={ styles.row }>
+                                       <div className={ styles.col6 }>
+                                          {/* <TextField
+                                             label="Load Date:"
+                                             onGetErrorMessage={this._onError}
+                                             // disabled={true}
+                                             value={this.state.formState.BernhardtRepName}
+                                             // prefix=""
+                                             name="BernhardtRepName"
+                                             onChange={ this._onInputChange }
+                                             // errorMessage={ this._onError}
+                                             disabled={!this.props.editState}
+                                          /> */}
+                                          <DatePicker
+                                             label="Load Date:"
+                                             // firstDayOfWeek={this.state.firstDayOfWeek}
+                                             strings={DayPickerStrings}
+                                             placeholder="Select a date..."
+                                             ariaLabel="Select a date"
+                                             onSelectDate={() => {}}
+                                             disabled={!this.props.editState}
+                                             value={new Date(this.state.formState.BernhardtLoadDate)}
+                                          />
+                                       </div>
+                                       <div className={ styles.col6 }>
+                                          <Dropdown
+                                             dropdownWidth={150}
+                                             placeholder="Select an option"
+                                             label="CW Load Time"
+                                             options={timeDropDownChoices}
+                                             id="CWLoadTime0"
+                                             // required={true}
+                                             selectedKey={this.state.formState.CWLoadTime0.key || ''}
+                                             onChange={this._onChangeDropDown}
+                                             disabled={!this.props.editState}
+                                          />
+                                       </div>
+                                    </div>
+                                 </Stack>
+                                 <Stack tokens={{childrenGap: 20}}>
+                                    <div className={ styles.row }>
+                                       <div className={ styles.col6 }>
+                                          <Dropdown
+                                             dropdownWidth={150}
+                                             placeholder="Select an option"
+                                             label="PLT 2 Load Time"
+                                             options={timeDropDownChoices}
+                                             id="PLT2LoadTime0"
+                                             // required={true}
+                                             selectedKey={this.state.formState.PLT2LoadTime0.key || ''}
+                                             onChange={this._onChangeDropDown}
+                                             disabled={!this.props.editState}
+                                          />
+                                       </div>
+                                       <div className={ styles.col6 }>
+                                          <Dropdown
+                                             dropdownWidth={150}
+                                             placeholder="Select an option"
+                                             label="PLT 9 Load Time"
+                                             options={timeDropDownChoices}
+                                             id="PLT9LoadTime0"
+                                             // required={true}
+                                             selectedKey={this.state.formState.PLT9LoadTime0.key || ''}
+                                             onChange={this._onChangeDropDown}
+                                             disabled={!this.props.editState}
+                                          />
+                                       </div>
+                                    </div>
+                                 </Stack>
+                                 <Stack tokens={{childrenGap: 20}}>
+                                 <div className={ styles.row }>
+                                    <div className={ styles.col6 }>
+                                       
                                     </div>
                                     <div className={ styles.col6 }>
                                        <DatePicker
@@ -601,119 +708,52 @@ class Form extends React.Component<any, any> {
                                     </div>
                                  </div>
                               </Stack>
-                              
+                              </div>
                            </div>
-
-                           <div className={ styles.col4 }>
-                              <Stack tokens={{childrenGap: 20}}>
-                                 <div className={ styles.row }>
-                                    <div className={ styles.col6 }>
-                                       <TextField
-                                          label="Commodity:"
-                                          onGetErrorMessage={this._onError}
-                                          // disabled={true}
-                                          value={this.state.formState.BernhardtCommodity}
-                                          // prefix=""
-                                          name="BernhardtCommodity"
-                                          onChange={ this._onInputChange }
-                                          // errorMessage={ this._onError}
-                                          disabled={!this.props.editState}
-                                       />
-                                    </div>
-                                    <div className={ styles.col6 }>
-                                       <TextField
-                                          label="Size of Container(s):"
-                                          onGetErrorMessage={this._onError}
-                                          // disabled={true}
-                                          value={this.state.formState.BernhardtCartonContainerSize}
-                                          // prefix=""
-                                          name="BernhardtCartonContainerSize"
-                                          onChange={ this._onInputChange }
-                                          // errorMessage={ this._onError}
-                                          disabled={!this.props.editState}
-                                       />
-                                    </div>
-                                 </div>
-                              </Stack>
-                              <Stack tokens={{childrenGap: 20}}>
-                                 <div className={ styles.row }>
-                                    <div className={ styles.col6 }>
-                                       <TextField
-                                          label="L/C:"
-                                          onGetErrorMessage={this._onError}
-                                          // disabled={true}
-                                          value={this.state.formState.BernhardtLC}
-                                          // prefix=""
-                                          name="BernhardtLC"
-                                          onChange={ this._onInputChange }
-                                          // errorMessage={ this._onError}
-                                          disabled={!this.props.editState}
-                                       />
-                                    </div>
-                                    <div className={ styles.col6 }>
-                                       <TextField
-                                          label="Total Shipment Value:"
-                                          onGetErrorMessage={this._onError}
-                                          // disabled={true}
-                                          value={this.state.formState.BernhardtTotalShipmentValue}
-                                          // prefix=""
-                                          name="BernhardtTotalShipmentValue"
-                                          onChange={ this._onInputChange }
-                                          // errorMessage={ this._onError}
-                                          disabled={!this.props.editState}
-                                       />
-                                    </div>
-                                 </div>
-                              </Stack>
-                              <TextField
-                                 label="Freight Forwarders:"
-                                 onGetErrorMessage={this._onError}
-                                 // disabled={true}
-                                 value={this.state.formState.BernhardtFreightForwarder}
-                                 // prefix=""
-                                 name="BernhardtFreightForwarder"
-                                 onChange={ this._onInputChange }
-                                 // errorMessage={ this._onError}
-                                 disabled={!this.props.editState}
-                              />
-
-                              <TextField
-                                 type="text"
-                                 multiline
-                                 rows={5}
-                                 cols={100}
-                                 label="Special Instruction"
-                                 // onGetErrorMessage={this._getErrorMessage}
-                                 disabled={!this.props.editState}
-                                 value={this.state.formState.BernhardtSpecInst ? this._sanitizeNotes(this.state.formState.BernhardtSpecInst): ''}
-                                 // prefix=""
-                                 name="BernhardtSpecInst"
-                                 onChange={this._onInputChange}
-                              />
-                              <TextField
-                                 type="text"
-                                 multiline
-                                 rows={5}
-                                 cols={100}
-                                 label="Comments"
-                                 // onGetErrorMessage={this._getErrorMessage}
-                                 disabled={!this.props.editState}
-                                 value={this.state.formState.BernhardtComments ? this._sanitizeNotes(this.state.formState.BernhardtComments): ''}
-                                 // prefix=""
-                                 name="BernhardtComments"
-                                 onChange={this._onInputChange}
-                              />                                  
-                              
-                           </div>
-                        </div>
-                     </Stack>
-
-
+                        </Stack>
                      </div>
                   </PivotItem>
-                  
-                  {/* {console.log(this.state.formState)} */}
-                  
+
+                  <PivotItem headerText="Special Instructions / Comments" itemIcon="Comment">
+                     <div
+                        style={{
+                           padding: '1rem',
+                        }}
+                     >
+                        <Stack tokens={{childrenGap: 20}}>
+                           <div className={ styles.row }>
+                              <div className={ styles.col8 }>
+                                 <TextField
+                                    type="text"
+                                    multiline
+                                    rows={5}
+                                    cols={100}
+                                    label="Special Instruction"
+                                    // onGetErrorMessage={this._getErrorMessage}
+                                    disabled={!this.props.editState}
+                                    value={this.state.formState.BernhardtSpecInst ? this._sanitizeNotes(this.state.formState.BernhardtSpecInst): ''}
+                                    // prefix=""
+                                    name="BernhardtSpecInst"
+                                    onChange={this._onInputChange}
+                                 />
+                                 <TextField
+                                    type="text"
+                                    multiline
+                                    rows={5}
+                                    cols={100}
+                                    label="Comments"
+                                    // onGetErrorMessage={this._getErrorMessage}
+                                    disabled={!this.props.editState}
+                                    value={this.state.formState.BernhardtComments ? this._sanitizeNotes(this.state.formState.BernhardtComments): ''}
+                                    // prefix=""
+                                    name="BernhardtComments"
+                                    onChange={this._onInputChange}
+                                 />                                  
+                              </div>
+                           </div>
+                        </Stack>
+                     </div>
+                  </PivotItem>
             
 
                   <PivotItem headerText="Delivery Details" itemIcon="DeliveryTruck">
@@ -758,63 +798,8 @@ class Form extends React.Component<any, any> {
                                     // errorMessage={ this._onError}
                                     disabled={!this.props.editState}
                                  />
-                                 <TextField
-                                    label="Total Cartons:"
-                                    onGetErrorMessage={this._onError}
-                                    // disabled={true}
-                                    value={this.state.formState.BernhardtTotalCartoons}
-                                    // prefix=""
-                                    name="BernhardtTotalCartoons"
-                                    onChange={ this._onInputChange }
-                                    // errorMessage={ this._onError}
-                                    disabled={!this.props.editState}
-                                 />
-                              </div>
-                              <div className={ styles.col4 }>
                                  <Dropdown
-                                    placeholder="Select an option"
-                                    label="CW Arrival Time"
-                                    options={timeDropDownChoices}
-                                    id="CWArrivalTime0"
-                                    // required={true}
-                                    selectedKey={this.state.formState.CWArrivalTime0.key || ''}
-                                    onChange={this._onChangeDropDown}
-                                    disabled={!this.props.editState}
-                                 />
-                                 <Dropdown
-                                    placeholder="Select an option"
-                                    label="PLT 2 Arrival Time"
-                                    options={timeDropDownChoices}
-                                    id="PLT2ArrivalTime"
-                                    // required={true}
-                                    selectedKey={this.state.formState.PLT2ArrivalTime.key || ''}
-                                    onChange={this._onChangeDropDown}
-                                    disabled={!this.props.editState}
-                                 />
-                                 <Dropdown
-                                    placeholder="Select an option"
-                                    label="PLT 9 Arrival Time"
-                                    options={timeDropDownChoices}
-                                    id="PLT9ArrivalTime0"
-                                    // required={true}
-                                    selectedKey={this.state.formState.PLT9ArrivalTime0.key || ''}
-                                    onChange={this._onChangeDropDown}
-                                    disabled={!this.props.editState}
-                                 />
-                                 <TextField
-                                    label="Total Pieces:"
-                                    onGetErrorMessage={this._onError}
-                                    // disabled={true}
-                                    value={this.state.formState.BernhardtTotalPieces}
-                                    // prefix=""
-                                    name="BernhardtTotalPieces"
-                                    onChange={ this._onInputChange }
-                                    // errorMessage={ this._onError}
-                                    disabled={!this.props.editState}
-                                 />
-                              </div>
-                              <div className={ styles.col4 }>
-                              <Dropdown
+                                    dropdownWidth={150}
                                     placeholder="Select an option"
                                     label="CW Departure Time"
                                     options={timeDropDownChoices}
@@ -825,6 +810,7 @@ class Form extends React.Component<any, any> {
                                     disabled={!this.props.editState}
                                  />
                                  <Dropdown
+                                    dropdownWidth={150}
                                     placeholder="Select an option"
                                     label="PLT 2 Departure Time"
                                     options={timeDropDownChoices}
@@ -835,6 +821,7 @@ class Form extends React.Component<any, any> {
                                     disabled={!this.props.editState}
                                  />
                                  <Dropdown
+                                    dropdownWidth={150}
                                     placeholder="Select an option"
                                     label="PLT 9 Departure Time"
                                     options={timeDropDownChoices}
@@ -842,6 +829,21 @@ class Form extends React.Component<any, any> {
                                     // required={true}
                                     selectedKey={this.state.formState.PLT9DepartureTime0.key || ''}
                                     onChange={this._onChangeDropDown}
+                                    disabled={!this.props.editState}
+                                 />
+                                 
+                              </div>
+                              <div className={ styles.col4 }>
+                                 
+                                 <TextField
+                                    label="Total Pieces:"
+                                    onGetErrorMessage={this._onError}
+                                    // disabled={true}
+                                    value={this.state.formState.BernhardtTotalPieces}
+                                    // prefix=""
+                                    name="BernhardtTotalPieces"
+                                    onChange={ this._onInputChange }
+                                    // errorMessage={ this._onError}
                                     disabled={!this.props.editState}
                                  />
                                  <TextField
@@ -855,6 +857,55 @@ class Form extends React.Component<any, any> {
                                     // errorMessage={ this._onError}
                                     disabled={!this.props.editState}
                                  />
+                                 
+                                 <TextField
+                                    label="Total Cartons:"
+                                    onGetErrorMessage={this._onError}
+                                    // disabled={true}
+                                    value={this.state.formState.BernhardtTotalCartoons}
+                                    // prefix=""
+                                    name="BernhardtTotalCartoons"
+                                    onChange={ this._onInputChange }
+                                    // errorMessage={ this._onError}
+                                    disabled={!this.props.editState}
+                                 />
+                                 <Dropdown
+                                    dropdownWidth={150}
+                                    placeholder="Select an option"
+                                    label="CW Arrival Time"
+                                    options={timeDropDownChoices}
+                                    id="CWArrivalTime0"
+                                    // required={true}
+                                    selectedKey={this.state.formState.CWArrivalTime0.key || ''}
+                                    onChange={this._onChangeDropDown}
+                                    disabled={!this.props.editState}
+                                 />
+                                 <Dropdown
+                                    dropdownWidth={150}
+                                    placeholder="Select an option"
+                                    label="PLT 2 Arrival Time"
+                                    options={timeDropDownChoices}
+                                    id="PLT2ArrivalTime"
+                                    // required={true}
+                                    selectedKey={this.state.formState.PLT2ArrivalTime.key || ''}
+                                    onChange={this._onChangeDropDown}
+                                    disabled={!this.props.editState}
+                                 />
+                                 <Dropdown
+                                    dropdownWidth={150}
+                                    placeholder="Select an option"
+                                    label="PLT 9 Arrival Time"
+                                    options={timeDropDownChoices}
+                                    id="PLT9ArrivalTime0"
+                                    // required={true}
+                                    selectedKey={this.state.formState.PLT9ArrivalTime0.key || ''}
+                                    onChange={this._onChangeDropDown}
+                                    disabled={!this.props.editState}
+                                 />
+                              </div>
+                              <div className={ styles.col4 }>
+                                 
+                                 
                               </div>
                            </div>
                         </Stack>
@@ -898,7 +949,7 @@ class Form extends React.Component<any, any> {
                                  style={{border: 'none'}}
                               />
                            </div>
-                           <div className={ styles.col9 } style={{ marginTop: '29px'}}>
+                           <div className={ styles.col5 } style={{ marginTop: '29px'}}>
                            {
                               this.state.attachmentFiles &&
                               

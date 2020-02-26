@@ -42,22 +42,27 @@ class RecursiveInputs extends React.Component<any,{}> {
             <tr>
                
                <td style={{width: '55%'}}>
-                  <div>
-                     <a href={item.ServerRelativeUrl} target="_blank">
-                        <TextField
-                           iconProps={{iconName: ''}}
-                           type="text"
-                           name="BernhardtEmail"
-                           value={item.name ? item.name : item.FileName}
-                           disabled={true}
-                           // onGetErrorMessage={this._onEmailError}
-                           // validateOnFocusIn
-                           // validateOnFocusOut
-                           onMouseOver={this.onMouseOver}
-                           onMouseLeave={this.onMouseLeave}
-                        />
-                     </a>
-                  </div>
+                  <a 
+                     href={item.ServerRelativeUrl}
+                     target="_blank"
+                     onMouseOver={this.onMouseOver}
+                     onMouseLeave={this.onMouseLeave}
+                  >
+                     <div>
+                           <TextField
+                              iconProps={{iconName: ''}}
+                              type="text"
+                              name="BernhardtEmail"
+                              value={item.name ? item.name : item.FileName}
+                              disabled={true}
+                              // onGetErrorMessage={this._onEmailError}
+                              // validateOnFocusIn
+                              // validateOnFocusOut
+                              
+                           />
+                     </div>
+                  </a>
+
                </td>
                {
                   !this.props.match.params.id &&
@@ -124,12 +129,12 @@ class RecursiveInputs extends React.Component<any,{}> {
     }
 
     private onMouseOver = e => {
-      e.target.style.color = 'teal';
+      // e.target.style.color = 'teal';
       e.target.style.cursor = 'pointer';
     }
 
     private onMouseLeave = e => {
-      e.target.style.color = 'rgb(166, 166, 166)';
+      // e.target.style.color = 'rgb(166, 166, 166)';
     }
 
     private _onEmailError = (value: string) => {
